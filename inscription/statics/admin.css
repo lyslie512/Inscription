@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.wrapper {
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	background: black;
+	color: white;
+	top: 0px;
+	
+}
+.wrapper  h2{
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.wrapper ul li{
+	position: relative;
+	padding: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+	border-top:1px solid rgba(225,225,225,225.05);
+	font-size: 20px;
+
+}
+.wrapper  ul li a{
+	color: white;
+	display: block;
+	text-decoration: none;
+}
+/*.wrapper .menu ul li a .fas{
+	width: 25px;
+
+}*/
+.wrapper ul li:hover{
+	background: pink;
+}
+.wrapper ul li:hover a{
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+}
+/*.wrapper .menu .social_media{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+}
+.wrapper .menu .social_media a{
+	display: block;
+	width: 40px;
+	background: #594f8d;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 0 5px;
+	color: #bdb8d7;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}*/
+.contenu{
+	width: 100%;
+	margin-left:200px;
+}
+ .contenu .header{
+	padding: 10px;
+	background: #fff;
+	color: #717171;
+	border-bottom: 1px solid #e0e4e8;
+}
+.info{
+	width: 800px;
+	height:800px;
+	background: 2px auto black;
+	position: relative;
+	right: -40px;
+}
+ .contenu .info{
+	margin: 20px;
+	color: #717171;
+	line-height: 30px;
+
+}
+ .contenu .info div{
+	margin-bottom: 50px;
+	
+}
+
+/*.wrapper ul{
+	padding: 0;
+	list-style: none;
+	background: white;
+}
+.wrapper ul li{
+	display: inline-block;
+	position: relative;
+	line-height: 21px;
+	text-align:left;
+}
+.wrapper ul li a{
+	display: block;
+	padding: 8px 25px;
+	color: white;
+	text-decoration: none;
+}
+.wrapper ul li a:hover{
+	color: white;
+	background: black;
+}
+.wrapper ul li ul .sous{
+	min-width: 125px;
+	background:#11DF3A;
+	position: absolute;;
+	z-index: 999;
+	left: 0;
+}
+.wrapper ul li:hover ul .sous{
+	display: block;
+}
+.wrapper ul li ul .sous li{
+	display: block;
+}*/
+           
+
+/*.drown{
+	display: none;
+}
+.drown li a{
+	position: static;
+	display: none;
+	box-shadow: 0px 1px 2px #CCC;
+}
+.drown ul{
+	line-height: 40px;
+	border-bottom: none;
+	display:inherit;
+}
+ 
+ li .drown:hover li a {
+	position: absolute;
+	display: block;
+	font-size: 16px;
+	color: black;
+	padding-left: 60px;
+}
+li:hover .drown{
+	position: absolute;
+	display: block;
+	font-size: 16px;
+	color: black;
+	padding-left: 60px;
+}
+.drown li a{
+	position: absolute;
+	top: 50%;
+	right: 50px;
+	font-size: 100px;
+	transform: translateX(-50%);
+}
+#t{
+	position: relative;
+	right: -40px;
+}
+.droite table{
+	width: 800px;
+	height:800px;
+	background: 2px auto black;
+	position: relative;
+	right: -100px;
+}
+.ta{
+	margin-left: 40px;
+}*/
+

@@ -1,0 +1,88 @@
+.tex{
+	color:black;
+	width: 15rem;
+	background-color: black;
+	text-decoration-color: white;
+	text-decoration: none;
+}
+.b{
+	color: white;
+}
+.bb{
+	color: black;
+}
+.im{
+	background-color: silver;
+}
+#bou{
+	margin-left: 8rem;
+}
+#bou1{
+	margin-left: 7rem;
+}
+.fo{
+	background-color: black;
+}
+.nav1{
+  		width: 50%;
+  		margin: 0 auto;
+  		position: sticky;
+  		top: 0px;
+  	}
+  	nav .ul1{
+	list-style-type: none;
+}
+nav .li1{
+	float: left;
+	width: 25%;
+}
+nav .ul1::after{
+	content: "";
+	display:table;
+	clear: both;
+}
+nav .a{
+	display: block;
+	text-decoration: none;
+	color: black;
+	border-bottom: 2px solid transparent;
+	padding: 10px 0px;
+}
+nav .a:hover{
+	color: orange;
+	border-bottom: 4px solid gold;
+}
+
+  	#ba{
+  		color: white;
+  	}
+  	.btn1 {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Green */
+.success1 {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+#input1 {
+	 border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
+        background-color: #eee;
+    background: transparent;
+}
+.no-outline:focus {
+        outline: none;
+      }
