@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'student_inscription',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'inscription.urls'
@@ -118,6 +120,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ('en','English'),
+    ('fr', 'French')
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
@@ -128,4 +135,7 @@ STATICFILES_DIRS=(
     os.path.join(BASE_DIR,"statics"),
     )
 INTERNAL_IPS = ['127.0.0.1']
+
+LOGIN_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/login'
 

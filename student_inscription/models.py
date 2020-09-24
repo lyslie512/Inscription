@@ -4,31 +4,31 @@ from django.urls import reverse
 
 # Create your models here.
 class Faculty(models.Model):
-	name=models.CharField(max_length=40,verbose_name="Nom Falcute")
+	name=models.CharField(max_length=40,verbose_name="name")
 
 	def __str__(self):
 		return self.name
 
 class Campus(models.Model):
-	name=models.CharField(max_length=50,verbose_name="Nom du campus")
+	name=models.CharField(max_length=50,verbose_name="name")
 
 	def __str__(self):
 		return self.name
 
 class Student(models.Model):
-	name=models.CharField(max_length=50,verbose_name="Nom")
-	first_name=models.CharField(max_length=30,verbose_name="Prenom")
-	date=models.DateField(verbose_name="Date de naissance")
-	nationality=models.CharField(max_length=100,verbose_name="Nationalite")
+	name=models.CharField(max_length=50,verbose_name="Name")
+	first_name=models.CharField(max_length=30,verbose_name="First name")
+	date=models.DateField(verbose_name="Date")
+	nationality=models.CharField(max_length=100,verbose_name="Nationality")
 	sex=models.CharField(max_length=20,verbose_name="Sex")
-	civil_status=models.CharField(max_length=30,verbose_name="Etat civil")
-	diploma=models.CharField(max_length=50,verbose_name="Diplome")
-	facult=models.ForeignKey(Faculty,on_delete=models.CASCADE, related_name='faculty',verbose_name="Faculte")
-	level=models.CharField(max_length=50,verbose_name="Niveau")
-	campus=models.ForeignKey(Campus,on_delete=models.CASCADE,related_name='campus',verbose_name="Campus")
-	cni=models.CharField(max_length=40,verbose_name="Carte d'identite")
-	email=models.CharField(max_length=50,verbose_name="Adresse email")
-	phone=models.IntegerField(verbose_name="Numero de telephone")
+	civil_status=models.CharField(max_length=30,verbose_name="Civil status")
+	diploma=models.CharField(max_length=50,verbose_name="Diploma")
+	facult=models.ForeignKey(Faculty,on_delete=models.CASCADE, related_name='faculty',verbose_name="Faculty")
+	level=models.CharField(max_length=50,verbose_name="level")
+	campus=models.ForeignKey(Campus,on_delete=models.CASCADE,related_name='campus',verbose_name="campus")
+	cni=models.CharField(max_length=40,verbose_name="Identity card number")
+	email=models.CharField(max_length=50,verbose_name="Email")
+	phone=models.IntegerField(verbose_name="Phone number")
 
 
 	def __str__(self):

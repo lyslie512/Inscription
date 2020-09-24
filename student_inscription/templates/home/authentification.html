@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,9 +48,7 @@
        </tr>
       </form>
     </div>
-     {% for message in messages %}
      <strong><p id="messages">{{message}}</p></strong>
-     {% endfor %}
       </table>
       </td>
     </tr>

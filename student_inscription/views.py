@@ -2,15 +2,16 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators  import login_required
-from .forms import *
+from .forms import StudentForm,CreateUserForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
-from .models import *
+from .models import Faculty,Campus,Student
 from django.views.generic.detail import DetailView
-from django.views.generic import ListView
+from django.views.generic import ListView,TemplateView
 from django.urls import reverse_lazy
 from django.http import HttpResponse
+from django.utils.translation import gettext
 
 
 # Create your views here.
@@ -29,7 +30,7 @@ def homes(request):
 			form=CreateUserForm()
 		return render(request,'home/home.html',{'form': form})
 
-def loginPage(request):
+def login_page(request):
 	if request.user.is_authenticated:
 		return redirect('home')
 	else:
@@ -46,13 +47,13 @@ def loginPage(request):
 			messages.info(request,'Nom ou Mot de passe incorect')
 	return render(request,'home/authentification.html')
 
-def logout_Page(request):
+def logout_page(request):
 	logout(request)
 	messages.info(request,"Deconnection reussit")
 	return redirect('login')
 
-@login_required(login_url='login')
-def home_page(request):
+@login_required()
+def home_page(TemplateView):
 	return render(request,'home/home_page.html')
 
 class StudentCreate(CreateView):
@@ -67,7 +68,7 @@ class StudentDetail(DetailView):
 
 	def get_object(self):
 		student=super(StudentDetail,self).get_object()
-		form=StudentForm(instance=Student)
+		form=StudentForm(instance=student)
 		return form
 
 	def get_template_name(self):
