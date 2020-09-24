@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login page</title>
+	    <link rel="stylesheet" type="text/css" href="{% static 'pag.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body><br><br><br>
+<table bgcolor="white" border="0" style="margin-left: 22rem;">
+    <tr>
+        <td>
+          <div class="container" style="margin-left: 5rem;">
+        <h3>AUTHENTIFIEZ-VOUS</h3><br><br>
+        <table >
+        <form method="POST">
+          {% csrf_token %}
+          <tr>
+            <td>
+               <p>Nom</p>
+              <input type="text" name="username" class="no-outline" id="input1" required="required" placeholder="Entrez votre Nom" size="23">
+              <br><br>
+            </td>
+          </tr>
+        <td>
+       <p>Mot de passe</p>
+          <input type="password" name="password" class="no-outline" id="input1" required="required" placeholder="Entrez votre mot de passe" size="23"><br><br>
+        </td>
+      </tr>
+    <tr>
+        <center>
+        <td>
+          <div class="align-items-center">
+      <center><button type="submit" class="btn btn-primary" style="border-radius:2rem;">Se connecter</button></center>
+      <br><br>
+    </div>
+        </td>
+        </center>
+       </tr>
+       <tr>
+       	    <td>
+  <div class="card-footer text-muted text-center" style="border-radius:2rem;">
+             <p>Vous n'êtes pas inscrit? <a href="/">Créer un nouveau compte</a></p>
+          </div>
+          <br>
+      </td>
+       </tr>
+      </form>
+    </div>
+     {% for message in messages %}
+     <strong><p id="messages">{{message}}</p></strong>
+     {% endfor %}
+      </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>University home page</title>
+	   <link rel="stylesheet" type="text/css" href="{% static 'admin.css' %}">
+	    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	 
+  <!--<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">-->
+
+<div class="wrapper">
+		<h2>Menu</h2>
+		<ul>
+			<li><a href="{% url 'home_page' %}">Accueil</a></li>
+			<li><a href="">Evenement marquant</a></li>
+			<li><a href="">Formation</a></li>
+			<li><a href="">Facultes</a></li>
+			<li><a href="">Instituts</a></li>
+			<li><a href="{% url 'student' %}">S'inscrire</a></li>
+			
+		</ul>
+		</div>
+
+	<div class="contenu">
+	<div class="header">
+		<i class="fab fa-youtube" style="font-size: 20px; color: red;margin-left: 15px"><small style="color: black;"> YouTube</small> </i>
+		<i class="fab fa-google" style="font-size: 20px; color: green;margin-left: 15px;"><small style="color: black;"> Google</small> </i>
+		<i class="fab fa-facebook" style="font-size: 20px; color: blue;margin-left: 15px"><small style="color: black;"> Facebook</small> </i>
+		<i class="fab fa-instagram" style="font-size: 20px; color: brown;margin-left: 15px"><small style="color: black;"> Instagram</small> </i>
+		<i class="fab fa-yahoo" style="font-size: 20px; color: red;margin-left: 15px"><small style="color: black;"> Yahoo</small></i>
+		<i><span style="font-size: 20px;margin-left: 65px">Salut, {{request.user}} </span></i>
+	<i><a href="{% url 'logout' %}"><button type="button" class="btn btn-primary" style="font-size: 20px; margin-left:100px; ">Deconnection</button></a></i>
+</div>
+		<div class="info">
+  </div>
+</div>
+</div></div></div>
+ <!--background-image: url("{% static 'image/cant1.jpg' %}");-->
+</body>
+</html>
