@@ -23,9 +23,13 @@ class Student(models.Model):
 	sex=models.CharField(max_length=20,verbose_name="Sex")
 	civil_status=models.CharField(max_length=30,verbose_name="Civil status")
 	diploma=models.CharField(max_length=50,verbose_name="Diploma")
-	facult=models.ForeignKey(Faculty,on_delete=models.CASCADE, related_name='faculty',verbose_name="Faculty")
+
+	facult=models.ForeignKey('student_inscription.Faculty',on_delete=models.CASCADE, related_name='faculty',verbose_name="Faculty")
+
 	level=models.CharField(max_length=50,verbose_name="level")
-	campus=models.ForeignKey(Campus,on_delete=models.CASCADE,related_name='campus',verbose_name="campus")
+
+	campus=models.ForeignKey('student_inscription.Campus',on_delete=models.CASCADE,related_name='campus',verbose_name="campus")
+
 	cni=models.CharField(max_length=40,verbose_name="Identity card number")
 	email=models.CharField(max_length=50,verbose_name="Email")
 	phone=models.IntegerField(verbose_name="Phone number")

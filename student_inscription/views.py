@@ -12,40 +12,41 @@ from django.views.generic import ListView,TemplateView
 from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.utils.translation import gettext
+from django.views import View
 
 
 # Create your views here.
-def homes(request):
-	if request.user.is_authenticated:
-		return redirect('home')
-	else:
-		if request.method=='POST':
-			form=CreateUserForm(request.POST)
-			if form.is_valid():
-				user=form.save()
+class register_page(View):
+	form_class=CreateUserForm
+	template_name='home/home.html'
+
+	def get(self, request, *args, **kwargs):
+		form=self.form_class
+		return render(request, self.template_name, {'form': form })
+
+	def post(self,request, *args , **kwargs):
+		form=self.form_class(request.POST)
+		if form.is_valid():
+				user = form.save()
 				auth_login(request,user)
-			return redirect('login')
-		else:
+		return redirect('login')
+		return render(request, self.template_name, {'form': form })
 
-			form=CreateUserForm()
-		return render(request,'home/home.html',{'form': form})
+class login_page(View):
+	template_name='home/authentification.html'
 
-def login_page(request):
-	if request.user.is_authenticated:
-		return redirect('home')
-	else:
+	def get(self, request, *args, **kwargs):
+		return render(request, self.template_name) #{'form': form })
 
-		if request.method == 'POST':
-			username =request.POST.get('username')
-			password =request.POST.get('password')
-			user = authenticate(request,username=username,password=password)
+	def post(self,request, *args, **kwargs):
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+		user = authenticate(request,username=username,password=password)
+		if user is not None:
+			login(request,user)
+		return render(request,'home/home_page.html')
 
-			if user is not None:
-				login(request,user)
-			return render(request,'home/home_page.html')
-		else:
-			messages.info(request,'Nom ou Mot de passe incorect')
-	return render(request,'home/authentification.html')
+
 
 def logout_page(request):
 	logout(request)
@@ -53,7 +54,7 @@ def logout_page(request):
 	return redirect('login')
 
 @login_required()
-def home_page(TemplateView):
+def home_page(request):
 	return render(request,'home/home_page.html')
 
 class StudentCreate(CreateView):
