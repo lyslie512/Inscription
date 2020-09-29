@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +16,12 @@
 <div class="wrapper">
 		<h2>Menu</h2>
 		<ul>
-			<li><a href="{% url 'home' %}">Accueil</a></li>
-			<li><a href="">Evenement marquant</a></li>
+			<li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+			<li><a href="">Evenements</a></li>
 			<li><a href="">Formation</a></li>
-			<li><a href="">Facultes</a></li>
-			<li><a href="">Instituts</a></li>
-			<li><a href="{% url 'student' %}">S'inscrire</a></li>
+			<li><a href="">{% trans "Faculty" %}</a></li>
+			<li><a href="">{% trans "Institute" %}</a></li>
+			<li><a href="{% url 'student' %}">{% trans "Sign in" %}</a></li>
 			
 		</ul>
 		</div>
@@ -32,7 +33,7 @@
 		<i class="fab fa-facebook" style="font-size: 20px; color: blue;margin-left: 15px"><small style="color: black;"> Facebook</small> </i>
 		<i class="fab fa-instagram" style="font-size: 20px; color: brown;margin-left: 15px"><small style="color: black;"> Instagram</small> </i>
 		<i class="fab fa-yahoo" style="font-size: 20px; color: red;margin-left: 15px"><small style="color: black;"> Yahoo</small></i>
-		<i><span style="font-size: 20px;margin-left: 65px">Salut, {{request.user}} </span></i>
+		<i><span style="font-size: 20px;margin-left: 65px">{% trans "Hello" %},{{user.username}} </span></i>
 	<i><a href="{% url 'logout' %}"><button type="button" class="btn btn-primary" style="font-size: 20px; margin-left:100px; ">Deconnection</button></a></i>
 </div>
 		<div class="info">

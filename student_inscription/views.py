@@ -11,7 +11,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic import ListView,TemplateView
 from django.urls import reverse_lazy
 from django.http import HttpResponse
-from django.utils.translation import gettext
+from django.utils.translation import gettext as _
 from django.views import View
 
 

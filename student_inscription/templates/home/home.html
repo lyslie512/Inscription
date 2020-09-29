@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@
     <tr>
         <td>
           <div class="container">
-        <h3>INSCRIVEZ-VOUS</h3>
+        <h3>{% trans "Create your account" %}</h3>
       </div>
         <div class="container">
         <table width="300">
@@ -20,28 +21,28 @@
           {% csrf_token %}
           <tr>
             <td><br>
-              <p>Nom</p>
+              <p>{% trans "Name"%}</p>
               <p>{{form.username}}
                 <!--<input type="text" name="username" required="required" placeholder="username" class="tex">--></p>
             </td>
           </tr>
           <tr>
         <td>
-         <p>Email</p>
+         <p>{% trans "Email address"  %}</p>
           <p>{{form.email}}
             <!--<input type="email" name="email" required="required" placeholder="your email address" class="tex">--></p>
         </td>
       </tr>
       <tr>
         <td>
-       <p>Mot de passe</p>
+       <p>{%  trans "Password" %}</p>
           <p>
             {{form.password1}}<!--<input type="password" name="pwd1" required="required" placeholder="your password" class="tex">--></p>
         </td>
       </tr>
        <tr>
         <td>
-        <p>Confirmer mot de passe</p>
+        <p>{%  trans "Confirm your password" %}</p>
         <p>{{form.password2}}
           <!--<input type="password" name="pwd2" required="required" placeholder="confirm your password" class="tex">--></p>
         </td>
@@ -52,14 +53,14 @@
     </tr>
         <td>
           <div class="container">
-      <br><button type="submit" class="btn btn-primary" id="bou" style="border-radius:3rem;">Créer un nouveau compte</button><br><br>
+      <br><button type="submit" class="btn btn-primary" id="bou" style="border-radius:3rem;">{% trans "Create a new account" %}</button><br><br>
     </div>
         </td>
       </tr>
          <tr>
       <td bgcolor="silver" style="border-radius:2rem;">
   <div class="card-footer text-muted text-center">
-             Avez-vous déjà un compte? <a href="login">Se connecter</a>
+             {% trans "Have you already an account?" %} <a href="login">{% trans "Login in" %}</a>
           </div>
       </td>
   </tr>

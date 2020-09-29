@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,19 +13,19 @@
     <tr>
         <td>
           <div class="container" style="margin-left: 5rem;">
-        <h3>AUTHENTIFIEZ-VOUS</h3><br><br>
+        <h3>{% trans "SIGN IN" %}</h3><br><br>
         <table>
         <form method="POST">
           {% csrf_token %}
           <tr>
             <td>
-               <p>Nom</p>
+               <p>{% trans "Name"%}</p>
               <input type="text" name="username" class="no-outline" id="input1" required="required" placeholder="Entrez votre Nom" size="23">
               <br><br>
             </td>
           </tr>
         <td>
-       <p>Mot de passe</p>
+       <p>{% trans "Password"%}</p>
           <input type="password" name="password" class="no-outline" id="input1" required="required" placeholder="Entrez votre mot de passe" size="23"><br><br>
         </td>
       </tr>
@@ -32,7 +33,7 @@
         <center>
         <td>
           <div class="align-items-center">
-      <center><button type="submit" class="btn btn-primary" style="border-radius:2rem;">Se connecter</button></center>
+      <center><button type="submit" class="btn btn-primary" style="border-radius:2rem;">{% trans "Connexion" %}</button></center>
       <br><br>
     </div>
         </td>
@@ -41,7 +42,7 @@
        <tr>
        	    <td>
   <div class="card-footer text-muted text-center" style="border-radius:2rem;">
-             <p>Vous n'êtes pas inscrit? <a href="/">Créer un nouveau compte</a></p>
+             <p>{% trans "Don't you have an account?" %} <a href="/">{% trans "Create new account" %}</a></p>
           </div>
           <br>
       </td>
